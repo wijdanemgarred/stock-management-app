@@ -17,6 +17,17 @@ public class Category {
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products;
 
+    // Parameterized Constructor
+    public Category(Integer id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
+    // Default Constructor (Required by Hibernate)
+    public Category() {
+    }
+
     // Getters and Setters
     public Integer getId() {
         return id;

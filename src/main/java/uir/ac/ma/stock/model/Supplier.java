@@ -19,6 +19,17 @@ public class Supplier {
     @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products;
 
+    // Parameterized Constructor
+    public Supplier(Integer id, String name, String contact) {
+        this.id = id;
+        this.name = name;
+        this.contact = contact;
+    }
+
+    // Default Constructor (Required by Hibernate)
+    public Supplier() {
+    }
+
     // Getters and Setters
     public Integer getId() {
         return id;

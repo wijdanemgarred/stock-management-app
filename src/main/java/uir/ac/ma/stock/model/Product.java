@@ -29,6 +29,18 @@ public class Product {
     @JoinColumn(name = "supplier_id", nullable = false)
     private Supplier supplier;
 
+    // Parameterized constructor
+    public Product(Integer id, String name, String description, double price) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
+
+    // Default constructor (required by Hibernate)
+    public Product() {
+    }
+
     // Getters and Setters
     public Integer getId() {
         return id;
